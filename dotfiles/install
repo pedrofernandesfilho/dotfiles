@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+SOURCE_PATH="$HOME/dotfiles/oh-my-zsh-custom"
+OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
+ALIASES_FILE="aliases.zsh"
+ENVVARS_FILE="environment-vars.zsh"
+
+# Insall oh-my-zsh
+## Verify Zsh is installed
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+rm $OH_MY_ZSH_CUSTOM_PATH/$ALIASES_FILE $OH_MY_ZSH_CUSTOM_PATH/$ENVVARS_FILE
+
+ln -s $SOURCE_PATH/$ALIASES_FILE $OH_MY_ZSH_CUSTOM_PATH/$ALIASES_FILE
+ln -s $SOURCE_PATH/$ENVVARS_FILE $OH_MY_ZSH_CUSTOM_PATH/$ENVVARS_FILE
