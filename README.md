@@ -5,10 +5,9 @@
 - Git
 
 ## Configuraçõas para
+- NVim
+- Oh-My-Zsh
 - Tmux
-- oh-my-zsh
-
-## Instalação
 
 ```bash
 cd ~
