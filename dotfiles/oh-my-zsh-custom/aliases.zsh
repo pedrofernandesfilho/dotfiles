@@ -1,3 +1,5 @@
+alias t='tmux'
+
 # Docker
 
 alias dk='docker'
