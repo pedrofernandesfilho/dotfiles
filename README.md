@@ -8,6 +8,7 @@
 - NVim
 - Oh-My-Zsh
 - Tmux
+- Variáveis de ambiente
 
 ```bash
 cd ~
