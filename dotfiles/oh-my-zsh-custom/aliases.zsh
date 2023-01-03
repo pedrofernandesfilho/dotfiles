@@ -1,3 +1,4 @@
+alias e='exit'
 alias t='tmux'
 
 # Docker
