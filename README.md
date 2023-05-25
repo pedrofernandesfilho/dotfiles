@@ -15,7 +15,7 @@ cd ~
 git init -b main
 git remote add origin git@github.com:pedrofernandesfilho/dotfiles.git
 git pull origin main
-git branch -u origin main
+git branch -u origin/main
 ```
 
 ```bash

@@ -1,0 +1,26 @@
+
+#!/usr/bin/env bash
+
+# Versão experimental (em desenvolvimento)
+# Objetivo: Instalação automatizada de pacotes Manjaro
+
+# tmux
+if ! command -v tmux &> /dev/null
+then
+    echo "tmux could not be found"
+    exit
+fi
+
+# Neovide
+if ! command -v neovide &> /dev/null
+then
+    echo "neovide could not be found"
+    exit
+fi
+
+# Alacritty
+if ! command -v alacritty &> /dev/null
+then
+    sudo pacman -S alacritty --noconfirm
+    exit
+fi
