@@ -3,16 +3,22 @@
 SOURCE_PATH="$HOME/dotfiles/oh-my-zsh-custom"
 OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
 
-ALIASES_FILE="aliases.zsh"
-ENVVARS_FILE="environment-vars.zsh"
+# INSTALA Oh-my-zsh se não estiver instalado
 
 if ! [ -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-rm -f $OH_MY_ZSH_CUSTOM_PATH/$ALIASES_FILE $OH_MY_ZSH_CUSTOM_PATH/$ENVVARS_FILE
 
-ln -s $SOURCE_PATH/$ALIASES_FILE $OH_MY_ZSH_CUSTOM_PATH/$ALIASES_FILE
-ln -s $SOURCE_PATH/$ENVVARS_FILE $OH_MY_ZSH_CUSTOM_PATH/$ENVVARS_FILE
 
-sh settgins
+# (RE)CRIA links dos arquivos oh-my-zsh custom
+
+for file in $SOURCE_PATH/*.zsh
+do
+  FILENAME=$(basename -- $file)
+
+  echo "file $FILENAME"
+
+  rm -f $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
+  ln -s $file $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
+done

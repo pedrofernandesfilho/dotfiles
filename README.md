@@ -10,7 +10,7 @@
 - Tmux
 - Variáveis de ambiente
 
-# Instalação
+## Instalação
 ```bash
 cd ~
 git init -b main
@@ -28,7 +28,5 @@ source ~/.zshrc
 ```
 
 ## Infos
-
-As configurações do Oh-my-zsh ficam no arquivo `settings`.
 
 O diretório `dotfiles` contém atalhos (symlinks) para arquivos com a finalidade de facilitar a edição e manutenção dos mesmos.

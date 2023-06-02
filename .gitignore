@@ -13,3 +13,5 @@ dotfiles/oh-my-zsh-custom/environment-vars-local.zsh
 !.config/nvim/
 .config/nvim/*
 !.config/nvim/init.vim
+
+!.zshrc
