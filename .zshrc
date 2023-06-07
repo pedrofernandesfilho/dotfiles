@@ -73,7 +73,7 @@ ZSH_THEME=steeef
 plugins=(z zsh-autosuggestions git nvm npm)
 
 # NVM
-zstyle ':omz:plugins:nvm' lazy yes
+#zstyle ':omz:plugins:nvm' lazy yes # Se habilitar não encontra o comando npx
 #zstyle ':omz:plugins:nvm' autoload yes
 #zstyle ':omz:plugins:nvm' silent-autoload yes
 
