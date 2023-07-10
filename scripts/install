@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# INSTALA Oh-my-zsh se não estiver instalado
+
+if ! [ -d ~/.oh-my-zsh ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+
+# (RE)Criar symlinks no diretório do usuário
+
+SOURCE_PATH="$HOME/dotfiles"
+
+echo "configs"
+for file in $SOURCE_PATH/configfiles/* $SOURCE_PATH/configfiles/.[!.]*
+do
+  FILENAME=$(basename -- $file)
+
+  echo "file $FILENAME"
+
+  if [ $FILENAME = "init.vim" ]; then
+    rm -f $HOME/.config/nvim/$FILENAME
+    ln -s $file $HOME/.config/nvim/$FILENAME
+  else
+    rm -f $HOME/$FILENAME
+    ln -s $file $HOME/$FILENAME
+  fi
+done
+
+
+OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
+
+# (RE)CRIA links dos arquivos oh-my-zsh custom
+
+echo "zsh"
+for file in $SOURCE_PATH/oh-my-zsh-custom/*.zsh
+do
+  FILENAME=$(basename -- $file)
+
+  echo "file $FILENAME"
+
+  rm -f $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
+  ln -s $file $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
+done

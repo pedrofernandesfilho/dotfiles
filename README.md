@@ -13,10 +13,7 @@
 ## Instalação
 ```bash
 cd ~
-git init -b main
-git remote add origin git@github.com:pedrofernandesfilho/dotfiles.git
-git pull origin main
-git branch -u origin/main
+git clone git@github.com:pedrofernandesfilho/dotfiles.git
 ```
 
 ```bash
@@ -26,7 +23,3 @@ sh ~/dotfiles/install
 ```bash
 source ~/.zshrc
 ```
-
-## Infos
-
-O diretório `dotfiles` contém atalhos (symlinks) para arquivos com a finalidade de facilitar a edição e manutenção dos mesmos.
