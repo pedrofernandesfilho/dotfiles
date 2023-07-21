@@ -13,12 +13,12 @@ fi
 
 SOURCE_PATH="$HOME/dotfiles"
 
-echo "configs"
+echo "Configs Files:"
 for file in $SOURCE_PATH/configfiles/* $SOURCE_PATH/configfiles/.[!.]*
 do
   FILENAME=$(basename -- $file)
 
-  echo "file $FILENAME"
+  echo "- file $FILENAME"
 
   if [ $FILENAME = "init.vim" ]; then
     rm -f $HOME/.config/nvim/$FILENAME
@@ -30,16 +30,16 @@ do
 done
 
 
-OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
-
 # (RE)CRIA links dos arquivos oh-my-zsh custom
 
-echo "zsh"
+OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
+
+echo "Custom OhMyZsh files:"
 for file in $SOURCE_PATH/oh-my-zsh-custom/*.zsh
 do
   FILENAME=$(basename -- $file)
 
-  echo "file $FILENAME"
+  echo "- file $FILENAME"
 
   rm -f $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
   ln -s $file $OH_MY_ZSH_CUSTOM_PATH/$FILENAME

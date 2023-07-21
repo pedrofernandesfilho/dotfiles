@@ -24,3 +24,6 @@ then
     sudo pacman -S alacritty --noconfirm
     exit
 fi
+
+# Git
+# page
