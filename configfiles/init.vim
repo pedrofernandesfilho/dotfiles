@@ -1,3 +1,5 @@
+set smartcase
+
 imap    jj  <Esc>
 nmap    oo  o<Esc>k
 nmap    ooo o<Enter>
