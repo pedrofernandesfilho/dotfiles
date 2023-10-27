@@ -4,10 +4,17 @@ alias t='tmux'
 # Docker
 
 alias dk='docker'
-alias dkc='docker-compose'
-alias dkcs='docker-compose start'
+alias dkps='docker ps'
 alias dkpsa='docker ps -a'
 alias dks='sudo systemctl start docker.service'
+
+# Docker Compose
+
+alias dkc='docker-compose'
+alias dkcd='docker-compose down'
+alias dkcs='docker-compose start'
+alias dkcu='docker-compose up'
+alias dkcud='docker-compose up -d'
 
 # DOTNET
 
@@ -27,6 +34,7 @@ alias gbranchd='git branch -d'
 alias gbranchvv='git branch -vv'
 alias gco='git checkout'
 alias gcob='git checkout -b'
+alias gctm='git commit -m'
 alias gctv='git commit -v'
 alias gctav='git commit --amend -v'
 alias gctsv='git commit -S -v'
