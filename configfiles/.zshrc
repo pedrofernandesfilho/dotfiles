@@ -71,7 +71,7 @@ ZSH_THEME=bureau
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(z zsh-autosuggestions git)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z zsh-autosuggestions git nvm npm)
+plugins=(z zsh-autosuggestions git asdf npm)
 
 # NVM
 #zstyle ':omz:plugins:nvm' lazy yes # Se habilitar não encontra o comando npx
