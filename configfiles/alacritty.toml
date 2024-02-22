@@ -1,0 +1,9 @@
+[window]
+
+dimensions = { columns = 150, lines = 50 }
+
+
+[colors]
+
+primary.background = "#000000"
+normal.black = "#444672"

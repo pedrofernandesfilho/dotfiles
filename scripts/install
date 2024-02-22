@@ -23,6 +23,9 @@ do
   if [ $FILENAME = "init.vim" ]; then
     rm -f $HOME/.config/nvim/$FILENAME
     ln -s $file $HOME/.config/nvim/$FILENAME
+  elif [ $FILENAME = "alacritty.toml" ]; then
+    rm -f $HOME/.config/alacritty/$FILENAME
+    ln -s $file $HOME/.config/alacritty/$FILENAME
   else
     rm -f $HOME/$FILENAME
     ln -s $file $HOME/$FILENAME
