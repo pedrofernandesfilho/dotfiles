@@ -6,4 +6,4 @@ dimensions = { columns = 150, lines = 50 }
 [colors]
 
 primary.background = "#000000"
-normal.black = "#444672"
+normal.black = "#6e709c"
