@@ -3,47 +3,61 @@
 # INSTALA Oh-my-zsh se não estiver instalado
 
 if ! [ -d ~/.oh-my-zsh ]; then
+  # O Oh-my-zsh depende do zsh estar instalado
+
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+  echo ">>> OMZ installed!"
+
+  # TODO: Verificar se após instalar o Oh-my-zsh o script continua executando
+fi
+
+# INSTALA o plugin zsh-autosuggestions do Oh-my-zsh se não estiver instalado
+
+if ! [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+  echo ">>> OMZ auto sugestion plugin installed!"
 fi
 
 
-# (RE)Criar symlinks no diretório do usuário
+# (Re)Criar symlinks dos arquivos de configuracao
 
-SOURCE_PATH="$HOME/dotfiles"
+DOTFILES_DIR="$HOME/dotfiles"
 
-echo "Configs Files:"
-for file in $SOURCE_PATH/configfiles/* $SOURCE_PATH/configfiles/.[!.]*
+echo "> Configs Files:"
+
+for file in $(find $DOTFILES_DIR/configfiles/ -type f)
 do
   FILENAME=$(basename -- $file)
+  echo "- $FILENAME"
 
-  echo "- file $FILENAME"
+  echo "  SOURCE-FILE: $file"
 
-  if [ $FILENAME = "init.vim" ]; then
-    rm -f $HOME/.config/nvim/$FILENAME
-    ln -s $file $HOME/.config/nvim/$FILENAME
-  elif [ $FILENAME = "alacritty.toml" ]; then
-    rm -f $HOME/.config/alacritty/$FILENAME
-    ln -s $file $HOME/.config/alacritty/$FILENAME
-  else
-    rm -f $HOME/$FILENAME
-    ln -s $file $HOME/$FILENAME
-  fi
+  CONFIG_FILE=${file/dotfiles\/configfiles\//}
+  echo "  CONFIG-FILE: $CONFIG_FILE"
+
+  TARGET_DIR=${CONFIG_FILE/$FILENAME/}
+  echo "  TARGET-DIR: $TARGET_DIR"
+
+  mkdir -p $TARGET_DIR
+  ln -sf $file $CONFIG_FILE
 done
 
 
-# (RE)CRIA links dos arquivos oh-my-zsh custom
+# (Re)Cria symlinks dos arquivos oh-my-zsh custom
+
+echo "> Custom OhMyZsh files:"
 
 OH_MY_ZSH_CUSTOM_PATH="$HOME/.oh-my-zsh/custom"
 
-echo "Custom OhMyZsh files:"
-for file in $SOURCE_PATH/oh-my-zsh-custom/*.zsh
+for file in $DOTFILES_DIR/oh-my-zsh-custom/*.zsh
 do
   FILENAME=$(basename -- $file)
 
-  echo "- file $FILENAME"
+  echo "- $FILENAME"
+  echo "  SOURCE: $file"
+  echo "  TARGET: $OH_MY_ZSH_CUSTOM_PATH/$FILENAME"
 
-  rm -f $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
-  ln -s $file $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
+  ln -sf $file $OH_MY_ZSH_CUSTOM_PATH/$FILENAME
 done
