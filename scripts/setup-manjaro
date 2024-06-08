@@ -3,24 +3,52 @@
 # Versão experimental (em desenvolvimento)
 # Objetivo: Instalação automatizada de pacotes Manjaro
 
-# tmux
-if ! command -v tmux &> /dev/null
-then
-    echo "tmux could not be found"
-fi
+function installPackageIfNotInstalled() {
+  local package=$1
+  local command=${2:-$1}
 
-# Neovide
-if ! command -v neovide &> /dev/null
-then
-    echo "neovide could not be found"
-fi
+  echo ""
+  echo "> PACKAGE: '$package' ('$command')"
 
-# Alacritty
-if ! command -v alacritty &> /dev/null
-then
-    # sudo pacman -S alacritty --noconfirm
-fi
+  if ! command -v $command &> /dev/null
+  then
+    echo "  ❗ Não instalado"
+    echo "  🔨 Instalando..."
+    sudo pacman -Sy $package --noconfirm
+    # echo "  ✅ Feito!"
+  else
+    echo "  ☑️  Já instalado"
+  fi
+}
+
+installPackageIfNotInstalled "alacritty"
+installPackageIfNotInstalled "tmux"
+installPackageIfNotInstalled "neovim" "nvim"
+installPackageIfNotInstalled "neovide" # depende de nvim
+
+
+
+# CONFIGURAÇOES
 
 # Git
-# - page
-# - editor
+echo "> Configurações Git"
+# - core.pager
+git config --global core.pager ""
+echo "  ✅ core.pager configurado!"
+# - core.editor
+git config --global core.editor neovide
+echo "  ✅ core.editor configurado!"
+
+# Manjaro
+#echo "> Configuracões Manjaro"
+# Config cedilla
+
+
+
+# Desinstalar pacotes que vem na instalacao do manjaro
+
+# thunderbird lollypop totem snapshot fragments yelp deja-dup collision endeavour manjaro-hello
+# gnome-maps gnome-weather gnome-layout-swithcer gnome-tour gnome-clocks gnome-contacts
+
+# Verificar uma maneira de não dar erro se executar mais de uma vez
+#sudo pacman -Rsun deja-dup --noconfirm
