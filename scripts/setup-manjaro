@@ -28,6 +28,16 @@ installPackageIfNotInstalled "neovide" # depende de nvim
 
 
 
+# Desinstalar pacotes que vem na instalacao do manjaro
+
+# thunderbird lollypop totem snapshot fragments yelp deja-dup collision endeavour manjaro-hello
+# gnome-maps gnome-weather gnome-layout-swithcer gnome-tour gnome-clocks gnome-contacts
+
+# Verificar uma maneira de não dar erro se executar mais de uma vez
+#sudo pacman -Rsun deja-dup --noconfirm
+
+
+
 # CONFIGURAÇOES
 
 # Git
@@ -39,16 +49,18 @@ echo "  ✅ core.pager configurado!"
 git config --global core.editor neovide
 echo "  ✅ core.editor configurado!"
 
+
 # Manjaro
 #echo "> Configuracões Manjaro"
+
+# Níveis da bateria # /etc/UPower/UPower.conf
+
+sudo cp /etc/UPower/UPower.conf /etc/UPower/UPower-BKP.conf
+
+sudo sed -i 's/^PercentageLow=20/PercentageLow=6/' /etc/UPower/UPower.conf
+sudo sed -i 's/^PercentageAction=2/PercentageAction=4/' /etc/UPower/UPower.conf
+sudo sed -i 's/^CriticalPowerAction=HybridSleep/CriticalPowerAction=Hibernate/' /etc/UPower/UPower.conf
+
+sudo systemctl restart upower.service
+
 # Config cedilla
-
-
-
-# Desinstalar pacotes que vem na instalacao do manjaro
-
-# thunderbird lollypop totem snapshot fragments yelp deja-dup collision endeavour manjaro-hello
-# gnome-maps gnome-weather gnome-layout-swithcer gnome-tour gnome-clocks gnome-contacts
-
-# Verificar uma maneira de não dar erro se executar mais de uma vez
-#sudo pacman -Rsun deja-dup --noconfirm
