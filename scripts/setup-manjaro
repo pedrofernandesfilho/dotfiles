@@ -21,10 +21,12 @@ function installPackageIfNotInstalled() {
   fi
 }
 
-installPackageIfNotInstalled "alacritty"
-installPackageIfNotInstalled "tmux"
-installPackageIfNotInstalled "neovim" "nvim"
-installPackageIfNotInstalled "neovide" # depende de nvim
+#installPackageIfNotInstalled "alacritty"
+#installPackageIfNotInstalled "tmux"
+#installPackageIfNotInstalled "neovim" "nvim"
+#installPackageIfNotInstalled "neovide" # depende de nvim
+
+sudo pacman -Sy alacritty tmux neovim neovide --noconfirm
 
 
 
@@ -51,7 +53,7 @@ echo "  ✅ core.editor configurado!"
 
 
 # Manjaro
-#echo "> Configuracões Manjaro"
+echo "> Configuracões Manjaro"
 
 # Níveis da bateria # /etc/UPower/UPower.conf
 
@@ -63,4 +65,5 @@ sudo sed -i 's/^CriticalPowerAction=HybridSleep/CriticalPowerAction=Hibernate/' 
 
 sudo systemctl restart upower.service
 
-# Config cedilla
+echo "  ✅ Níveis de bateria configurados!"
+
