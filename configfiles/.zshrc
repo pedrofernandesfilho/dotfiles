@@ -71,7 +71,20 @@ ZSH_THEME=steeef
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(z zsh-autosuggestions git)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z zsh-autosuggestions git docker docker-compose dotnet asdf npm)
+plugins=(
+    tmux
+    z
+    zsh-autosuggestions
+    git
+    docker
+    docker-compose
+    dotnet
+    asdf
+    #npm
+    )
+
+# TMUX
+export ZSH_TMUX_AUTOSTART=true
 
 # NVM
 #zstyle ':omz:plugins:nvm' lazy yes # Se habilitar não encontra o comando npx
@@ -105,7 +118,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/pedrofernandes/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

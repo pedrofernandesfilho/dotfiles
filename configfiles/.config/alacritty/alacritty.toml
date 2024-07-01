@@ -1,6 +1,6 @@
 [window]
 
-dimensions = { columns = 150, lines = 50 }
+dimensions = { columns = 120, lines = 30 }
 
 
 [colors]
