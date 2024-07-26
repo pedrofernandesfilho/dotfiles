@@ -19,10 +19,6 @@ alias dkcs='docker compose start'
 alias dkcu='docker compose up'
 alias dkcud='docker compose up -d'
 
-# Rider
-
-alias rider='open -na "Rider.app" --args "$@"'
-
 # DOTNET
 
 alias dn='dotnet'
@@ -73,3 +69,9 @@ alias gstashp='git stash pop'
 alias gstashu='git stash -u'
 alias gstashum='git stash -u -m'
 alias gsw='git switch'
+
+# MacOS
+
+## Rider
+
+alias rider='open -na "Rider.app" --args "$@"'
