@@ -7,9 +7,9 @@ if ! [ -d ~/.oh-my-zsh ]; then
 
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-  echo ">>> OMZ installed!"
+  echo "> OMZ installed!"
 
-  # TODO: Verificar se após instalar o Oh-my-zsh o script continua executando
+  # TODO: Fazer o script continua executando após instalar o Oh-my-zsh
 fi
 
 # INSTALA o plugin zsh-autosuggestions do Oh-my-zsh se não estiver instalado
@@ -17,7 +17,7 @@ fi
 if ! [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-  echo ">>> OMZ auto sugestion plugin installed!"
+  echo "> OMZ auto sugestion plugin installed!"
 fi
 
 
@@ -38,7 +38,7 @@ do
   echo "  CONFIG-FILE: $CONFIG_FILE"
 
   TARGET_DIR=${CONFIG_FILE/$FILENAME/}
-  echo "  TARGET-DIR: $TARGET_DIR"
+  echo "  TARGET-DIR:  $TARGET_DIR"
 
   mkdir -p $TARGET_DIR
   ln -sf $file $CONFIG_FILE
