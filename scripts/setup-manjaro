@@ -1,61 +1,37 @@
 #!/usr/bin/env bash
 
 # Versão experimental (em desenvolvimento)
-# Objetivo: Instalação automatizada de pacotes Manjaro
-
-function installPackageIfNotInstalled() {
-  local package=$1
-  local command=${2:-$1}
-
-  echo ""
-  echo "> PACKAGE: '$package' ('$command')"
-
-  if ! command -v $command &> /dev/null
-  then
-    echo "  ❗ Não instalado"
-    echo "  🔨 Instalando..."
-    sudo pacman -Sy $package --noconfirm
-    # echo "  ✅ Feito!"
-  else
-    echo "  ☑️  Já instalado"
-  fi
-}
-
-#installPackageIfNotInstalled "alacritty"
-#installPackageIfNotInstalled "tmux"
-#installPackageIfNotInstalled "neovim" "nvim"
-#installPackageIfNotInstalled "neovide" # depende de nvim
-
-sudo pacman -Sy alacritty tmux neovim neovide --noconfirm
-
-
-
-# Desinstalar pacotes que vem na instalacao do manjaro
-
-# thunderbird lollypop totem snapshot fragments yelp deja-dup collision endeavour manjaro-hello
-# gnome-maps gnome-weather gnome-layout-swithcer gnome-tour gnome-clocks gnome-contacts
-
-# Verificar uma maneira de não dar erro se executar mais de uma vez
-#sudo pacman -Rsun deja-dup --noconfirm
-
+# Objetivo:
+#  - Configuração automatizada do Manjaro
+#  - Configuração automatizada do Git
+#  - Instalação automatizada de pacotes Manjaro
+#  - Remoção automatizada de pacotes Manjaro não utilizados
 
 
 # CONFIGURAÇOES
 
-# Git
+## Git
 echo "> Configurações Git"
-# - core.pager
+
+### core.pager
 git config --global core.pager ""
-echo "  ✅ core.pager configurado!"
-# - core.editor
-git config --global core.editor neovide
-echo "  ✅ core.editor configurado!"
+echo ">> core.pager configurado"
+
+### core.editor
+git config --global core.editor nvim
+echo ">> core.editor configurado"
+
+### user.email user.name
+git config --global user.email "pedro.fernandesfilho@gmail.com"
+git config --global user.name "Pedro Fernandes Filho"
+echo ">> user.email e user.name configurado"
 
 
-# Manjaro
+
+## Manjaro
 echo "> Configuracões Manjaro"
 
-# Níveis da bateria # /etc/UPower/UPower.conf
+### Níveis da bateria # /etc/UPower/UPower.conf
 
 sudo cp /etc/UPower/UPower.conf /etc/UPower/UPower-BKP.conf
 
@@ -65,5 +41,35 @@ sudo sed -i 's/^CriticalPowerAction=HybridSleep/CriticalPowerAction=Hibernate/' 
 
 sudo systemctl restart upower.service
 
-echo "  ✅ Níveis de bateria configurados!"
+echo ">> Níveis de bateria configurados"
 
+
+# PACOTES
+
+## Instalação
+echo "> Instalação de pacotes Manjaro"
+
+sudo pacman -Sy alacritty tmux neovim neovide --noconfirm
+sudo pacman -Sy discord steam --noconfirm
+
+# Discord, Steam
+
+
+## Desinstalar pacotes que vem na instalacao do Manjaro e não utlizo
+echo "> Remoção de pacotes Manjaro"
+
+## !!! Revisar quais pacots serão removidos de forma automatizada
+
+  # lollypop totem snapshot fragments yelp deja-dup collision endeavour manjaro-hello
+  # gnome-maps gnome-weather gnome-layout-swithcer gnome-tour gnome-clocks gnome-contacts
+
+  # TODO: Verificar uma maneira de não dar erro se executar mais de uma vez
+  #sudo pacman -Rsun deja-dup --noconfirm
+
+## Versão testada
+
+sudo pacman -Rsun thunderbird gnome-maps gnome-weather --noconfirm
+
+### Remover órfãos
+
+sudo pacman -Rsun $(pacman -Qdtq)
