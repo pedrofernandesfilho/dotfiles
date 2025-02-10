@@ -1,4 +1,5 @@
 alias e='exit'
+alias c='clear'
 alias t='tmux'
 
 # Docker
@@ -22,10 +23,11 @@ alias t='tmux'
 
 # DOTNET
 
+alias dbni='dotnet build --no-incremental'
+alias dclean='dotnet clean'
+
 # alias dn='dotnet'
 # alias dnb='dotnet build'
-# alias dnbni='dotnet build --no-incremental'
-# alias dnc='dotnet clean'
 # alias dni='dotnet --info'
 # alias dnn='dotnet new'
 # alias dnr='dotnet run'
@@ -34,6 +36,8 @@ alias t='tmux'
 # alias dnv='dotnet --version'
 
 # Git
+
+alias gcsv='gcs -v'
 
 # alias gadd='git add'
 # alias gbranch='git branch'
