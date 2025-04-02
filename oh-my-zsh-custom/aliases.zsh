@@ -28,5 +28,5 @@ alias gstaum='git stash -u -m'
 
 ## Rider
 
-alias rider='open -na "Rider.app" --args "$@"'
-alias ridersln='open -na "Rider.app" --args *.sln'
+alias rdr='open -na "Rider.app" --args "$@"'
+alias rdrs='open -na "Rider.app" --args *.sln'
