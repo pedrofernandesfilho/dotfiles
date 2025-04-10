@@ -6,6 +6,9 @@ alias t='tmux'
 
 # alias dks='sudo systemctl start docker.service'
 
+alias drmall='docker rm -vf $(docker ps -aq)'
+alias drmiall='docker rmi -f $(docker images -aq)'
+
 # Docker Compose
 
 
