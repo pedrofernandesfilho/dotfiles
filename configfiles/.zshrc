@@ -83,7 +83,10 @@ plugins=(
     #npm
     )
 
-# TMUX
+# Config autosuggestions plugin
+bindkey '`' autosuggest-accept
+
+# Config TMUX
 export ZSH_TMUX_AUTOSTART=true
 
 # NVM
