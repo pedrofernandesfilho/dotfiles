@@ -2,12 +2,14 @@ alias e='exit'
 alias c='clear'
 alias t='tmux'
 
+
 # Docker
 
 # alias dks='sudo systemctl start docker.service'
 
 alias drmall='docker rm -vf $(docker ps -aq)'
 alias drmiall='docker rmi -f $(docker images -aq)'
+
 
 # Docker Compose
 
@@ -18,14 +20,17 @@ alias di='dotnet --info'
 alias dbni='dotnet build --no-incremental'
 alias dclean='dotnet clean'
 
-# Git
 
-alias gcsv='git commit --gpg-sign -v'
-alias gstau='git stash -u'
-alias gstaum='git stash -u -m'
+# Git
 
 # alias gbranchvv='git branch -vv'
 # alias gk='LANG=en_US gitk'
+
+alias gcsv='git commit --gpg-sign -v'
+alias grpo='git remote prune origin'
+alias gstau='git stash -u'
+alias gstaum='git stash -u -m'
+
 
 # MacOS
 
