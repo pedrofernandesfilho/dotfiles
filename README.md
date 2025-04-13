@@ -7,6 +7,7 @@
 ## Configurações para
 - Alacritty
 - NVim
+- Neovide
 - Oh-My-Zsh
 - Tmux
 - Variáveis de ambiente
