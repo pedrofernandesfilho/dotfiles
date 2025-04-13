@@ -7,3 +7,4 @@ dimensions = { columns = 120, lines = 30 }
 
 primary.background = "#000000"
 normal.black = "#6e709c"
+normal.green = "#aecb6e"
