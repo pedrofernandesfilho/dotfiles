@@ -19,6 +19,8 @@ alias drmiall='docker rmi -f $(docker images -aq)'
 alias di='dotnet --info'
 alias dbni='dotnet build --no-incremental'
 alias dclean='dotnet clean'
+alias dnet='dotnet'
+alias dre='dotnet restore'
 
 
 # Git
