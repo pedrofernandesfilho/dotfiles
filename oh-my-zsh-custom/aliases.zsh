@@ -21,6 +21,7 @@ alias dbni='dotnet build --no-incremental'
 alias dclean='dotnet clean'
 alias dnet='dotnet'
 alias dre='dotnet restore'
+alias dv='dotnet --version'
 
 
 # Git
