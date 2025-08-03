@@ -3,32 +3,13 @@
 # Versão experimental (em desenvolvimento)
 # Objetivo:
 #  - Configuração automatizada do Manjaro
-#  - Configuração automatizada do Git
-#  - Instalação automatizada de pacotes Manjaro
 #  - Remoção automatizada de pacotes Manjaro não utilizados
 
 
 # CONFIGURAÇOES
 
-## Git
-echo "> Configurações Git"
+# TODO: Verificar se essa configução é específica do Gnome
 
-### core.pager
-git config --global core.pager ""
-echo ">> core.pager configurado"
-
-### core.editor
-git config --global core.editor nvim
-echo ">> core.editor configurado"
-
-### user.email user.name
-git config --global user.email "pedro.fernandesfilho@gmail.com"
-git config --global user.name "Pedro Fernandes Filho"
-echo ">> user.email e user.name configurado"
-
-
-
-## Manjaro
 echo "> Configuracões Manjaro"
 
 ### Níveis da bateria # /etc/UPower/UPower.conf
@@ -46,14 +27,7 @@ echo ">> Níveis de bateria configurados"
 
 # PACOTES
 
-## Instalação
-echo "> Instalação de pacotes Manjaro"
-
-sudo pacman -Sy alacritty tmux neovim neovide --noconfirm
-sudo pacman -Sy discord steam --noconfirm
-
-# Discord, Steam
-
+# TODO: Verificar se essa configução é específica do Gnome
 
 ## Desinstalar pacotes que vem na instalacao do Manjaro e não utlizo
 echo "> Remoção de pacotes Manjaro"
@@ -69,7 +43,3 @@ echo "> Remoção de pacotes Manjaro"
 ## Versão testada
 
 sudo pacman -Rsun thunderbird gnome-maps gnome-weather --noconfirm
-
-### Remover órfãos
-
-sudo pacman -Rsun $(pacman -Qdtq)

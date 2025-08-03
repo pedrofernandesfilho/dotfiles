@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Objetivo:
+#  - Instalação automatizada de pacotes
+
+
+# Instalação
+
+echo "> Instalação de pacotes (CachyOS)"
+
+sudo paru -Sy visual-studio-code-bin --skipreview --noconfirm

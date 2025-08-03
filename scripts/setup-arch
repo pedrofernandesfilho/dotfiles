@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Objetivo:
+#  - Instalação automatizada de pacotes
+
+
+# Instalação
+
+echo "> Instalação de pacotes"
+
+sudo pacman -Sy alacritty tmux neovim neovide --noconfirm
+sudo pacman -Sy discord steam --noconfirm
+
+
+# Remover órfãos
+
+sudo pacman -Rsun $(pacman -Qdtq)

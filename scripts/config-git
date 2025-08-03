@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Objetivo:
+#  - Configuração automatizada do Git
+
+echo "> Configurações Git"
+
+### core.pager
+git config --global core.pager ""
+echo ">> core.pager configurado"
+
+### core.editor
+git config --global core.editor nvim
+echo ">> core.editor configurado"
+
+### user.email user.name
+git config --global user.email "pedro.fernandesfilho@gmail.com"
+git config --global user.name "Pedro Fernandes Filho"
+echo ">> user.email e user.name configurado"
