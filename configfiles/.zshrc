@@ -75,6 +75,7 @@ plugins=(
     tmux
     z
     zsh-autosuggestions
+    zsh-syntax-highlighting
     git
     docker
     docker-compose
