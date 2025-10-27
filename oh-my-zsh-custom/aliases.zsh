@@ -5,7 +5,7 @@ alias t='tmux'
 
 # Docker
 
-# alias dks='sudo systemctl start docker.service'
+alias dstart='sudo systemctl start docker.service docker.socket containerd.service'
 
 alias drmall='docker rm -vf $(docker ps -aq)'
 alias drmiall='docker rmi -f $(docker images -aq)'
