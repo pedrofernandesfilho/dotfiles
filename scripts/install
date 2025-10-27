@@ -5,9 +5,7 @@
 if ! [ -d ~/.oh-my-zsh ]; then
   # O Oh-my-zsh depende do zsh estar instalado
 
-  # Teste instalando com Subshell
-
-  ( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   echo "> OMZ installed!"
 fi
@@ -42,6 +40,7 @@ do
 
   echo "  SOURCE-FILE: $file"
 
+  # TODO: Tonar a substituição POSIX-safe: exemplo: CONFIG_FILE=${file#"$DOTFILES_DIR/configfiles/"}
   CONFIG_FILE=${file/dotfiles\/configfiles\//}
   echo "  CONFIG-FILE: $CONFIG_FILE"
 
