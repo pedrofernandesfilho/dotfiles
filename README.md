@@ -24,7 +24,7 @@ git clone git@github.com:pedrofernandesfilho/dotfiles.git
 Executar script bash para instalar arquivos de configuracao (dotfiles)
 
 ```bash
-sh ~/dotfiles/scripts/install
+bash ~/dotfiles/scripts/install
 ```
 
 (Re)Carregar configuracao do Zsh

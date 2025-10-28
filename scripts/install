@@ -33,7 +33,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 echo "> Configs Files:"
 
-for file in $(find $DOTFILES_DIR/configfiles/ -type f)
+for file in $(find $DOTFILES_DIR/configfiles/ \( -type f -o -type l \))
 do
   FILENAME=$(basename -- $file)
   echo "- $FILENAME"

@@ -5,7 +5,8 @@ nmap    OO  O<Esc>j
 
 set relativenumber
 
-set smartcase
+# ignorecase é necessário para funcionar case inssensitive no ideaVim
+set ignorecase smartcase
 
 set tabstop=2
 set shiftwidth=0
