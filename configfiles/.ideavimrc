@@ -1,0 +1,4 @@
+source ~/.config/nvim/init.vim
+
+set ignorecase smartcase
+set ideajoin
