@@ -5,11 +5,13 @@
 - Git
 
 ## Configurações para
+- Tmux
 - Alacritty
 - NVim
 - Neovide
+- IdeaVim
 - Oh-My-Zsh
-- Tmux
+- Aliases
 - Variáveis de ambiente
 
 ## Instalação
