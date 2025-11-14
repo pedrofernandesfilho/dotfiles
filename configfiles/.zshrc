@@ -82,6 +82,7 @@ plugins=(
     docker-compose
     dotnet
     asdf
+    kubectl
     #npm
     )
 
