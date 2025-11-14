@@ -6,12 +6,10 @@ alias t='tmux'
 # Docker
 
 alias dstart='sudo systemctl start docker.service docker.socket containerd.service'
+alias dstop='sudo systemctl stop docker.service docker.socket containerd.service'
 
 alias drmall='docker rm -vf $(docker ps -aq)'
 alias drmiall='docker rmi -f $(docker images -aq)'
-
-
-# Docker Compose
 
 
 # DOTNET
@@ -25,9 +23,6 @@ alias dv='dotnet --version'
 
 
 # Git
-
-# alias gbranchvv='git branch -vv'
-# alias gk='LANG=en_US gitk'
 
 alias gcsv='git commit --gpg-sign -v'
 alias grpo='git remote prune origin'
