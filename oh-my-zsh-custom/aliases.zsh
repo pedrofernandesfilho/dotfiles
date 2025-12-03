@@ -1,6 +1,5 @@
 alias e='exit'
 alias c='clear'
-alias t='tmux'
 
 
 # Docker
@@ -15,6 +14,7 @@ alias drmiall='docker rmi -f $(docker images -aq)'
 # DOTNET
 
 alias di='dotnet --info'
+alias dinst='curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin'
 alias dbni='dotnet build --no-incremental'
 alias dclean='dotnet clean'
 alias dnet='dotnet'
