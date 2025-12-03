@@ -3,7 +3,7 @@ nmap    oo  o<Esc>k
 nmap    ooo o<Enter>
 nmap    OO  O<Esc>j
 
-set relativenumber
+set number relativenumber
 
 set smartcase
 
