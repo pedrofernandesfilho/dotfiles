@@ -25,6 +25,7 @@ alias dv='dotnet --version'
 # Git
 
 alias gcsv='git commit --gpg-sign -v'
+alias gcsvm='git commit --gpg-sign -v -m'
 alias grpo='git remote prune origin'
 alias gstau='git stash -u'
 alias gstaum='git stash -u -m'
